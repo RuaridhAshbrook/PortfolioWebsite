@@ -9,8 +9,14 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #fafafa;
+  color: #1F2937;
+  min-height: 100vh;
+  background-color: #F7F9FC;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.12), transparent 40%),
+    radial-gradient(circle at 88% 28%, rgba(14, 165, 233, 0.12), transparent 45%),
+    radial-gradient(circle at 50% 96%, rgba(99, 102, 241, 0.10), transparent 40%);
+  background-attachment: fixed;
 }
 
 img {
@@ -19,7 +25,7 @@ img {
 }
 
 a {
-  color: #0b6b78;
+  color: #2563EB;
 }
 
 h1,
@@ -31,21 +37,24 @@ h3 {
 /* ---------- Navbar ---------- */
 .navbar {
   display: flex;
-  justify-content: space-between; /* left group on the left, right group on the right */
+  justify-content: space-between;
+  /* left group on the left, right group on the right */
   align-items: center;
   width: 100%;
   padding: 1rem;
-  background-color: aqua;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .navbar-left .logo {
   display: inline-block;
   font-size: medium;
   font-weight: bold;
-  color: black;
+  color: #1E3A5F;
 }
 
 .logo-img {
+  overflow: hidden;
   height: 44px;
   width: 44px;
   border-radius: 10px;
@@ -62,15 +71,15 @@ h3 {
 .navbar-right .nav-links a {
   display: block;
   padding: 0.4rem 0.8rem;
-  color: black;
+  color: #1F2937;
   text-decoration: none;
   border-radius: 6px;
 }
 
 .navbar-right .nav-links li:hover a,
 .navbar-right .nav-links a:focus-visible {
-  background-color: black;
-  color: beige;
+  background-color: #1E3A5F;
+  color: #FFFFFF;
 }
 
 .navbar-right .nav-links a.active {
@@ -80,7 +89,7 @@ h3 {
 
 /* ---------- Layout ---------- */
 .page {
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 2rem 1rem 4rem;
 }
@@ -90,8 +99,8 @@ h3 {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
   padding: 0.6rem 1.1rem;
-  background: black;
-  color: beige;
+  background: #1E3A5F;
+  color: #FFFFFF;
   border: 0;
   border-radius: 6px;
   font: inherit;
@@ -100,7 +109,7 @@ h3 {
 }
 
 .button:hover:not(:disabled) {
-  background: #333;
+  background: #2C5282;
 }
 
 .button:disabled {
@@ -119,8 +128,8 @@ h3 {
 
 .tags li {
   padding: 0.15rem 0.6rem;
-  background: #dff;
-  border: 1px solid #9dd;
+  background: #E8F0FE;
+  border: 1px solid #C7D7F5;
   border-radius: 999px;
   font-size: 0.85rem;
 }
@@ -137,7 +146,7 @@ h3 {
 
 .tagline {
   font-size: 1.2rem;
-  color: #0b6b78;
+  color: #2563EB;
   margin-top: 0;
 }
 
@@ -154,7 +163,7 @@ h3 {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  background: #ddd;
+  background: #EEF2F7;
   aspect-ratio: 900 / 520;
 }
 
@@ -236,7 +245,7 @@ h3 {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0 1.5rem;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #E2E8F0;
 }
 
 .tab {
@@ -249,12 +258,12 @@ h3 {
 }
 
 .tab:hover {
-  background: #eee;
+  background: #EEF2F7;
 }
 
 .tab.active {
   font-weight: bold;
-  border-bottom-color: black;
+  border-bottom-color: #1E3A5F;
 }
 
 .project-summary {
@@ -291,15 +300,15 @@ h3 {
 .contact-form input,
 .contact-form textarea {
   padding: 0.6rem;
-  border: 1px solid #aaa;
+  border: 1px solid #CBD5E1;
   border-radius: 6px;
   font: inherit;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid aqua;
-  border-color: #0b6b78;
+  outline: 2px solid #2563EB;
+  border-color: #2563EB;
 }
 
 .contact-form .button {
@@ -329,8 +338,44 @@ h3 {
   color: #b00020;
 }
 
+/* ---------- Sections ---------- */
+.intro h1 {
+  color: #1E3A5F;
+}
+
+/* ---------- Floating background dots ---------- */
+.floating-dots {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-dot {
+  position: absolute;
+  border-radius: 50%;
+  animation-name: float-dot;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float-dot {
+  to {
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-dot {
+    animation: none;
+  }
+}
+
 /* ---------- Small screens ---------- */
 @media (max-width: 760px) {
+
   .featured-grid,
   .project-detail,
   .contact-grid {

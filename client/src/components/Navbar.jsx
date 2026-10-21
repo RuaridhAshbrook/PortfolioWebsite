@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <div className='navbar-left'>
         <Link to='/' className='logo' aria-label='Home'>
-          <img src='/logo.svg' alt='Site logo' className='logo-img' />
+          <img src='/pfp.jpg' alt='Site logo' className='logo-img' />
         </Link>
       </div>
       <div className='navbar-right'>

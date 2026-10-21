@@ -4,10 +4,12 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Contact from './pages/Contact.jsx'
+import FloatingDots from './components/FloatingDots.jsx'
 
 function App() {
   return (
     <>
+      <FloatingDots />
       <Navbar />
       <main className='page'>
         <Routes>

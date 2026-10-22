@@ -15,9 +15,9 @@ export const profile = {
     'I currently have skills with Pyhton, Pytorch, Pandas, Matplotlib, Java, Javascript, React, Node JS, SQL, Postgre, Unity, C#, HTML, CSS, Git and Github, and I am currently learning more about computer vision and creating classifiers.',
   ],
   aboutImages: [
-    { src: placeholder('Photo of me 1', '#6b8e9f', 600, 700), alt: 'Photo of me at work' },
-    { src: placeholder('Photo of me 2', '#9f6b8e', 600, 700), alt: 'Photo of me outdoors' },
-    { src: placeholder('Photo of me 3', '#8e9f6b', 600, 700), alt: 'Photo of me with friends' },
+    { src: './aboutme1.jpeg', alt: 'Photo of me at work' },
+    { src: './aboutme2.jpg', alt: 'Photo of me in a Thai cooking class' },
+    { src: './pfp.jpg', alt: 'Photo of me with friends' },
   ],
 }
 

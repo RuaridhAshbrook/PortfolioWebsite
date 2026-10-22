@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 
 const COUNT = 45 // how many dots
-const COLOURS = ['#1E3A5F', '#2563EB', '#0EA5E9', '#6366F1'] // navy, blue, sky, indigo
 
 // Small seeded random generator: same "random" layout on every load
 function mulberry32(seed) {
@@ -25,9 +24,9 @@ const FloatingDots = () => {
                 id,
                 left: between(0, 100),
                 top: between(0, 100),
-                size: 4 + rand() ** 2 * 20, // 4px to 24px, mostly small
+                size: 4 + rand() ** 2 * 18, // 4px to 24px, mostly small
                 opacity: between(0.35, 0.75),
-                colour: COLOURS[Math.floor(rand() * COLOURS.length)],
+                colour: Math.floor(rand() * 4),
                 dx: Math.cos(angle) * distance,
                 dy: Math.sin(angle) * distance,
                 duration: between(18, 45), // seconds per drift
@@ -41,14 +40,13 @@ const FloatingDots = () => {
             {dots.map((d) => (
                 <span
                     key={d.id}
-                    className='floating-dot'
+                    className={`floating-dot dot-c${d.colour}`}
                     style={{
                         left: `${d.left}%`,
                         top: `${d.top}%`,
                         width: `${d.size}px`,
                         height: `${d.size}px`,
                         opacity: d.opacity,
-                        background: d.colour,
                         '--dx': `${d.dx}px`,
                         '--dy': `${d.dy}px`,
                         animationDuration: `${d.duration}s`,

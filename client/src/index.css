@@ -1,3 +1,60 @@
+/* ---------- Theme colours ---------- */
+:root {
+  color-scheme: light;
+  --bg: #F7F9FC;
+  --text: #1F2937;
+  --navbar-bg: #FFFFFF;
+  --border: #E2E8F0;
+  --primary: #1E3A5F;
+  --primary-hover: #2C5282;
+  --on-primary: #FFFFFF;
+  --accent: #2563EB;
+  --tint: #E8F0FE;
+  --tint-border: #C7D7F5;
+  --surface: #EEF2F7;
+  --input-bg: #FFFFFF;
+  --input-border: #CBD5E1;
+  --glow-1: rgba(37, 99, 235, 0.12);
+  --glow-2: rgba(14, 165, 233, 0.12);
+  --glow-3: rgba(99, 102, 241, 0.10);
+  --success: #1b7a2f;
+  --error: #b00020;
+  --dot-1: #1E3A5F;
+  --dot-2: #2563EB;
+  --dot-3: #0EA5E9;
+  --dot-4: #6366F1;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #121212;
+  --text: #E5E7EB;
+  --navbar-bg: #1A1A1A;
+  --border: #2E2E2E;
+  --primary: #E2E8F0;
+  --primary-hover: #FFFFFF;
+  --on-primary: #121212;
+  --accent: #60A5FA;
+  --tint: #1E293B;
+  --tint-border: #334155;
+  --surface: #1F1F1F;
+  --input-bg: #1A1A1A;
+  --input-border: #3F3F46;
+  --glow-1: rgba(96, 165, 250, 0.10);
+  --glow-2: rgba(14, 165, 233, 0.08);
+  --glow-3: rgba(129, 140, 248, 0.08);
+  --success: #4ADE80;
+  --error: #F87171;
+  --dot-1: #F59E0B;
+  /* amber */
+  --dot-2: #FB923C;
+  /* orange */
+  --dot-3: #FDBA74;
+  /* peach */
+  --dot-4: #FB7185;
+  /* rose */
+}
+
 /* ---------- Base ---------- */
 *,
 *::before,
@@ -9,14 +66,15 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   line-height: 1.6;
-  color: #1F2937;
+  color: var(--text);
   min-height: 100vh;
-  background-color: #F7F9FC;
+  background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.12), transparent 40%),
-    radial-gradient(circle at 88% 28%, rgba(14, 165, 233, 0.12), transparent 45%),
-    radial-gradient(circle at 50% 96%, rgba(99, 102, 241, 0.10), transparent 40%);
+    radial-gradient(circle at 12% 8%, var(--glow-1), transparent 40%),
+    radial-gradient(circle at 88% 28%, var(--glow-2), transparent 45%),
+    radial-gradient(circle at 50% 96%, var(--glow-3), transparent 40%);
   background-attachment: fixed;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 img {
@@ -25,7 +83,7 @@ img {
 }
 
 a {
-  color: #2563EB;
+  color: var(--accent);
 }
 
 h1,
@@ -42,15 +100,16 @@ h3 {
   align-items: center;
   width: 100%;
   padding: 1rem;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #E2E8F0;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.25s, border-color 0.25s;
 }
 
 .navbar-left .logo {
   display: inline-block;
   font-size: medium;
   font-weight: bold;
-  color: #1E3A5F;
+  color: var(--primary);
 }
 
 .logo-img {
@@ -63,6 +122,7 @@ h3 {
 .navbar-right .nav-links {
   list-style-type: none;
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -71,15 +131,15 @@ h3 {
 .navbar-right .nav-links a {
   display: block;
   padding: 0.4rem 0.8rem;
-  color: #1F2937;
+  color: var(--text);
   text-decoration: none;
   border-radius: 6px;
 }
 
 .navbar-right .nav-links li:hover a,
 .navbar-right .nav-links a:focus-visible {
-  background-color: #1E3A5F;
-  color: #FFFFFF;
+  background-color: var(--primary);
+  color: var(--on-primary);
 }
 
 .navbar-right .nav-links a.active {
@@ -87,11 +147,32 @@ h3 {
   text-decoration: underline;
 }
 
+.theme-toggle {
+  padding: 0.4rem 0.8rem;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
 /* ---------- Layout ---------- */
 .page {
   max-width: 1300px;
   margin: 0 auto;
   padding: 2rem 1rem 4rem;
+  /* Halo in the page colour so text stays readable when a dot floats behind it */
+  text-shadow:
+    0 0 3px var(--bg),
+    0 0 8px var(--bg),
+    0 0 14px var(--bg);
 }
 
 .button {
@@ -99,17 +180,18 @@ h3 {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
   padding: 0.6rem 1.1rem;
-  background: #1E3A5F;
-  color: #FFFFFF;
+  background: var(--primary);
+  color: var(--on-primary);
   border: 0;
   border-radius: 6px;
   font: inherit;
   text-decoration: none;
+  text-shadow: none;
   cursor: pointer;
 }
 
 .button:hover:not(:disabled) {
-  background: #2C5282;
+  background: var(--primary-hover);
 }
 
 .button:disabled {
@@ -128,10 +210,11 @@ h3 {
 
 .tags li {
   padding: 0.15rem 0.6rem;
-  background: #E8F0FE;
-  border: 1px solid #C7D7F5;
+  background: var(--tint);
+  border: 1px solid var(--tint-border);
   border-radius: 999px;
   font-size: 0.85rem;
+  text-shadow: none;
 }
 
 /* ---------- Home ---------- */
@@ -142,11 +225,12 @@ h3 {
 .intro h1 {
   font-size: 2.4rem;
   margin-bottom: 0.2rem;
+  color: var(--primary);
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #2563EB;
+  color: var(--accent);
   margin-top: 0;
 }
 
@@ -163,7 +247,7 @@ h3 {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  background: #EEF2F7;
+  background: var(--surface);
   aspect-ratio: 900 / 520;
 }
 
@@ -185,6 +269,7 @@ h3 {
   color: white;
   font-size: 1.6rem;
   line-height: 1;
+  text-shadow: none;
   cursor: pointer;
 }
 
@@ -245,7 +330,7 @@ h3 {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0 1.5rem;
-  border-bottom: 2px solid #E2E8F0;
+  border-bottom: 2px solid var(--border);
 }
 
 .tab {
@@ -253,17 +338,18 @@ h3 {
   border: 0;
   border-bottom: 3px solid transparent;
   background: none;
+  color: var(--text);
   font: inherit;
   cursor: pointer;
 }
 
 .tab:hover {
-  background: #EEF2F7;
+  background: var(--surface);
 }
 
 .tab.active {
   font-weight: bold;
-  border-bottom-color: #1E3A5F;
+  border-bottom-color: var(--primary);
 }
 
 .project-summary {
@@ -300,15 +386,18 @@ h3 {
 .contact-form input,
 .contact-form textarea {
   padding: 0.6rem;
-  border: 1px solid #CBD5E1;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font: inherit;
+  text-shadow: none;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid #2563EB;
-  border-color: #2563EB;
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
 }
 
 .contact-form .button {
@@ -331,16 +420,11 @@ h3 {
 }
 
 .form-status.sent {
-  color: #1b7a2f;
+  color: var(--success);
 }
 
 .form-status.error {
-  color: #b00020;
-}
-
-/* ---------- Sections ---------- */
-.intro h1 {
-  color: #1E3A5F;
+  color: var(--error);
 }
 
 /* ---------- Floating background dots ---------- */
@@ -359,6 +443,22 @@ h3 {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+.dot-c0 {
+  background: var(--dot-1);
+}
+
+.dot-c1 {
+  background: var(--dot-2);
+}
+
+.dot-c2 {
+  background: var(--dot-3);
+}
+
+.dot-c3 {
+  background: var(--dot-4);
 }
 
 @keyframes float-dot {

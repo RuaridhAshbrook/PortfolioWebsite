@@ -17,7 +17,7 @@ const Contact = () => {
             </li>
           ))}
         </ul>
-        <a href={CV.pdf} target='_blank' rel='noreferrer' className='button'>View my CV</a>
+        <a href="/CV.pdf" target='_blank' rel='noreferrer' className='button'>View my CV</a>
       </div>
     </section>
   )

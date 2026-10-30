@@ -356,55 +356,6 @@ h3 {
   font-weight: 600;
 }
 
-/* ---------- Contact ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-.contact-details ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-details li {
-  margin-bottom: 0.6rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  margin-top: 0.8rem;
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.6rem;
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--input-border);
-  border-radius: 6px;
-  font: inherit;
-  text-shadow: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid var(--accent);
-  border-color: var(--accent);
-}
-
-.contact-form .button {
-  align-self: flex-start;
-  margin-top: 1rem;
-}
-
 /* Spam trap: off-screen so people never see it */
 .hp-field {
   position: absolute;

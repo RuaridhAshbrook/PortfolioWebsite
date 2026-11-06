@@ -27,12 +27,12 @@ export const projects = [
     title: 'Sudoku Solving Application',
     summary: 'An application which uses computer vision to detect and solve sudokus.',
     description:
-      'This application uses computer vision to detect an image of a sudoku, it then uses a digit classifier and a backtracking algorithm to solve the sudoku and display the solution to the user. I have used pytorch to create a digit classifier which can detect the digits in the sudoku and then I have used a backtracking algorithm to solve the sudoku. I have also created a GUI for the application using Tkinter.',
-    tech: ['Python', 'Pandas', 'Pytorch'],
+      'This application uses computer vision to detect an image of a sudoku, it then uses a CNN cell classifier and a backtracking algorithm to solve the sudoku and display the solution to the user. I have used pytorch to train a neural network which can detect the digits in the sudoku and then I have used a backtracking algorithm to solve the sudoku. I have also created a GUI for the application using Tkinter which allows the user to interact and correct innaccurate predecitions for a higher accuracy when re-training.',
+    tech: ['Python', 'Pytorch', 'numpy', 'Tkinter', 'OpenCV'],
     images: [
-      { src: placeholder('Project One - screen 1', '#2f6f8f'), alt: 'Project One home screen' },
-      { src: placeholder('Project One - screen 2', '#3a8f6f'), alt: 'Project One dashboard' },
-      { src: placeholder('Project One - screen 3', '#8f6f3a'), alt: 'Project One settings' },
+      { src: "./appIMG1.png", alt: 'Project One home screen' },
+      { src: "./appIMG2.png", alt: 'Project One dashboard' },
+      { src: "./appIMG3.png", alt: 'Project One settings' },
     ],
     links: [
       { label: 'Source code', href: 'https://github.com/RuaridhAshbrook/SudokuSolver' },
@@ -46,8 +46,8 @@ export const projects = [
       'I have build a React and Node JS application which I have hosted on an AWS web server so I can display my projects and advertise myself to potential employers. I have used React for the front end and Node JS for the back end, I have also used PostgreSQL to store the data for the website.',
     tech: ['React', 'Node JS', 'AWS EC2', 'Prompt Engineering'],
     images: [
-      { src: placeholder('Project Two - screen 1', '#7a4f9f'), alt: 'Project Two main view' },
-      { src: placeholder('Project Two - screen 2', '#9f4f6a'), alt: 'Project Two details view' },
+      { src: "./WebsiteIMG1.png", alt: 'Project Two main view' },
+      { src: "./WebsiteIMG2.png", alt: 'Project Two details view' },
     ],
     links: [{ label: 'Source code', href: 'https://github.com/RuaridhAshbrook/PortfolioWebsite' }],
   },
@@ -58,7 +58,6 @@ export const projects = [
     description:
       'This will be a program which classifies mazes based on shape and then uses different maze solving algorithms to find the best algorithm to solve the maze. I then want to be able to use computer vision to classify what type of maze this is and then it should automatically select which algorithm should be used to solve it',
     tech: ['Python', 'Pytorch', 'Pandas'],
-    images: [{ src: placeholder('Project Three', '#4f7a9f'), alt: 'Project Three preview' }],
     links: [],
   },
 ]

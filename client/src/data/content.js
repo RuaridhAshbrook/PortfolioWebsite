@@ -30,9 +30,9 @@ export const projects = [
       'This application uses computer vision to detect an image of a sudoku, it then uses a CNN cell classifier and a backtracking algorithm to solve the sudoku and display the solution to the user. I have used pytorch to train a neural network which can detect the digits in the sudoku and then I have used a backtracking algorithm to solve the sudoku. I have also created a GUI for the application using Tkinter which allows the user to interact and correct innaccurate predecitions for a higher accuracy when re-training.',
     tech: ['Python', 'Pytorch', 'numpy', 'Tkinter', 'OpenCV'],
     images: [
-      { src: "./appIMG1.png", alt: 'Project One home screen' },
-      { src: "./appIMG2.png", alt: 'Project One dashboard' },
-      { src: "./appIMG3.png", alt: 'Project One settings' },
+      { src: './appIMG1.png', alt: 'Project One home screen' },
+      { src: './appIMG2.png', alt: 'Project One dashboard' },
+      { src: './appIMG3.png', alt: 'Project One settings' },
     ],
     links: [
       { label: 'Source code', href: 'https://github.com/RuaridhAshbrook/SudokuSolver' },
@@ -46,8 +46,8 @@ export const projects = [
       'I have build a React and Node JS application which I have hosted on an AWS web server so I can display my projects and advertise myself to potential employers. I have used React for the front end and Node JS for the back end, I have also used PostgreSQL to store the data for the website.',
     tech: ['React', 'Node JS', 'AWS EC2', 'Prompt Engineering'],
     images: [
-      { src: "./WebsiteIMG1.png", alt: 'Project Two main view' },
-      { src: "./WebsiteIMG2.png", alt: 'Project Two details view' },
+      { src: './WebsiteIMG1.png', alt: 'Project Two main view' },
+      { src: './WebsiteIMG2.png', alt: 'Project Two details view' },
     ],
     links: [{ label: 'Source code', href: 'https://github.com/RuaridhAshbrook/PortfolioWebsite' }],
   },

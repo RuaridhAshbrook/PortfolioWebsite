@@ -46,8 +46,9 @@ export const projects = [
       'I have build a React and Node JS application which I have hosted on an AWS web server so I can display my projects and advertise myself to potential employers. I have used React for the front end and Node JS for the back end, I have also used PostgreSQL to store the data for the website.',
     tech: ['React', 'Node JS', 'AWS EC2', 'Prompt Engineering'],
     images: [
-      { src: './websiteIMG1.png', alt: 'Project Two main view' },
-      { src: './websiteIMG2.png', alt: 'Project Two details view' },
+      { src: './webIMG1.png', alt: 'Project Two main view' },
+      { src: './webIMG2.png', alt: 'Project Two details view' },
+      { src: './webIMG3.png', alt: 'Website contact view' }
     ],
     links: [{ label: 'Source code', href: 'https://github.com/RuaridhAshbrook/PortfolioWebsite' }],
   },

@@ -59,6 +59,9 @@ export const projects = [
     description:
       'This will be a program which classifies mazes based on shape and then uses different maze solving algorithms to find the best algorithm to solve the maze. I then want to be able to use computer vision to classify what type of maze this is and then it should automatically select which algorithm should be used to solve it',
     tech: ['Python', 'Pytorch', 'Pandas'],
+    images: [
+      { src: './mazeIMG1.png', alt: 'This is my next project' },
+    ],
     links: [],
   },
 ]
